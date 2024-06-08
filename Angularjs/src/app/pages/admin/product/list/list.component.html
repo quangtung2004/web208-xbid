@@ -1,5 +1,5 @@
 <div class="container">
- 
+
     <h1>Danh Sách Sản Phẩm Admin</h1>
     <div class="d-flex justify-content-between mb-3">
         <button class="btn btn-success" [routerLink]="'/admin/products/create'">Create Product</button>
@@ -30,22 +30,24 @@
             <td class="product">{{product.priceold}}</td>
             <td class="product">{{product.description}}</td>
             <td class="product"><img src="{{product.image}}" width="90px" height="90px" alt=""></td>
-            <td class="product"><div class="crop" [style.width.px]="product.starRating * 90 / 5" title="rating">
-                <div style="width: 500px">
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
+            <td class="product">
+                <div class="crop" [style.width.px]="product.starRating * 90 / 5" title="rating">
+                    <div style="width: 500px">
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
                 </div>
-              </div></td>
+            </td>
             <td class="product">
                 <button class="btn btn-success" [routerLink]="['/products', product._id]">View</button>
                 <button class="btn btn-primary" [routerLink]="['/admin/products/edit',product._id]">Sửa</button>
-                <button (click)="handleDeleteProduct(product._id)" class="btn btn-danger">Xóa</button>
+                <button (click)="handleDeleteProduct(product._id)" class="btn btn-danger">Xóa Product</button>
                 <button [routerLink]="['admin/products', product._id]" class="btn btn-info">Bid</button>
             </td>
-            
+
         </tbody>
         }@empty{
         <div class="container">
